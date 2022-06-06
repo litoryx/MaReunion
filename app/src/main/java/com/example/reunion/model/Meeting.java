@@ -10,6 +10,9 @@ public class Meeting {
         this.room = room;
     }
 
+
+
+
     public String getName() {
         return name;
     }
