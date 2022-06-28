@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menu_1"
+    android:layout_gravity="right">
+    <item android:id="@+id/filter1"
+        android:title="Date" >
+    </item>
+    <item android:id="@+id/filter2"
+        android:title="Lieux" >
+        <!-- "file" submenu -->
+    </item>
+</menu>

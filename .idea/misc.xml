@@ -4,6 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Informatique/Reunion/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Reunion/app/src/main/res/drawable/ic_baseline_circle_24.xml" value="0.254" />
+        <entry key="..\:/Reunion/app/src/main/res/drawable/ic_baseline_filter_list_24.xml" value="0.124" />
+        <entry key="..\:/Reunion/app/src/main/res/layout/activity_add_meeting.xml" value="0.11302083333333333" />
+        <entry key="..\:/Reunion/app/src/main/res/layout/activity_main.xml" value="0.144" />
+        <entry key="..\:/Reunion/app/src/main/res/layout/fragment_list_meeting.xml" value="0.25416666666666665" />
+        <entry key="..\:/Reunion/app/src/main/res/layout/fragment_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Reunion/app/src/main/res/layout/list_activity_meeting.xml" value="0.25416666666666665" />
+        <entry key="..\:/Reunion/app/src/main/res/layout/list_fragment_meeting.xml" value="0.25416666666666665" />
+        <entry key="..\:/Reunion/app/src/main/res/menu/menu_filter.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
