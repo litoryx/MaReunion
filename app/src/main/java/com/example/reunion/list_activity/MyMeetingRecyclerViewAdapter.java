@@ -6,15 +6,13 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.reunion.Fonction.DI;
 import com.example.reunion.R;
 import com.example.reunion.model.Meeting;
-import com.example.reunion.service.MeetingApiService;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MyMeetingRecyclerViewAdapter extends RecyclerView.Adapter<MyMeetingRecyclerViewAdapter.ViewHolder> {
@@ -26,7 +24,6 @@ public class MyMeetingRecyclerViewAdapter extends RecyclerView.Adapter<MyMeeting
     }
 
     private List<Meeting> mMeetings;
-    public MeetingApiService mApiService;
     DelMeetingListener mDelMeetingListener;
 
     public MyMeetingRecyclerViewAdapter(List<Meeting> meetings, DelMeetingListener viewada) {
@@ -44,9 +41,19 @@ public class MyMeetingRecyclerViewAdapter extends RecyclerView.Adapter<MyMeeting
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
             Meeting meeting = mMeetings.get(position);
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            String dateFormated = dateTimeFormatter.format(meeting.getTime());
+            String poDesc = "nom"+position;
+            String poRoom = "room"+position;
+            String poEmails = "emails"+position;
+
             holder.mMeetingName.setText(meeting.getName());
-            holder.mMeetingTime.setText(meeting.getTime());
+            holder.mMeetingName.setContentDescription(poDesc);
+            holder.mMeetingTime.setText(dateFormated);
             holder.mMeetingRoom.setText(meeting.getRoom());
+            holder.mMeetingRoom.setContentDescription(poRoom);
+            holder.mMeetingEmails.setText(meeting.getEmails());
+            holder.mMeetingEmails.setContentDescription(poEmails);
 
         holder.mDeleteButton.setOnClickListener(new View.OnClickListener() {
             @Override

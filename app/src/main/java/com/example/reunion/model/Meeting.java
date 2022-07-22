@@ -2,16 +2,17 @@ package com.example.reunion.model;
 
 import java.time.LocalDate;
 import java.util.Comparator;
+import java.util.Objects;
 
 public class Meeting {
 
     private String name;
     private String room;
     private String emails;
-    private String time;
+    private LocalDate time;
     private String subject;
 
-    public Meeting(String name, String room, String emails, String time, String subject) {
+    public Meeting(String name, String room, String emails, LocalDate time, String subject) {
         this.name = name;
         this.room = room;
         this.emails = emails;
@@ -35,9 +36,9 @@ public class Meeting {
         this.subject = subject;
     }
 
-    public String getTime() { return time; }
+    public LocalDate getTime() { return time; }
 
-    public void setTime(String time) { this.time = time; }
+    public void setTime(LocalDate time) { this.time = time; }
 
     public String getRoom() { return room; }
 
@@ -63,4 +64,17 @@ public class Meeting {
             return o1.getRoom().compareTo(o2.getRoom());
         }
     };
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Meeting meeting = (Meeting) o;
+        return Objects.equals(name, meeting.name) && Objects.equals(room, meeting.room) && Objects.equals(emails, meeting.emails) && Objects.equals(time, meeting.time) && Objects.equals(subject, meeting.subject);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, room, emails, time, subject);
+    }
 }

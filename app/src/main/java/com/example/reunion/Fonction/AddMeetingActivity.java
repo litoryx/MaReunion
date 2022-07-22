@@ -1,10 +1,7 @@
 package com.example.reunion.Fonction;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -13,14 +10,11 @@ import com.example.reunion.R;
 import com.example.reunion.model.Meeting;
 import com.example.reunion.service.MeetingApiService;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.text.DateFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
-import java.util.Date;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class AddMeetingActivity extends AppCompatActivity {
 
@@ -31,7 +25,7 @@ public class AddMeetingActivity extends AppCompatActivity {
     private Button mTimeAdd;
     MeetingApiService mApiService;
     MaterialButton mButton;
-
+    LocalDate dateformatter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +38,6 @@ public class AddMeetingActivity extends AppCompatActivity {
         mTimeAdd = findViewById(R.id.timeLyt);
         mButton = findViewById(R.id.create);
         mApiService = DI.getMeetingApiService();
-        Date maint = new Date();
-        LocalDate today = LocalDate.now();
-
-       String dateformatter = today.format(DateTimeFormatter
-                .ofLocalizedDate(FormatStyle.MEDIUM));
 
         mTimeAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +45,7 @@ public class AddMeetingActivity extends AppCompatActivity {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(v.getContext(), new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-
+                    dateformatter = LocalDate.of(year,month+1,dayOfMonth);
                     }
                 },2022,02,06);
                 datePickerDialog.show();

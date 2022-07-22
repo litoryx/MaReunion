@@ -17,7 +17,15 @@ public class DummyMeetingApiService implements MeetingApiService {
 
     @Override
     public List<Meeting> getMeetingbyDate(LocalDate date) {
-        return null;
+
+        List<Meeting> result = new ArrayList<>();
+
+        for (Meeting meeting: meetings) {
+            if(meeting.getTime().equals(date)){
+                result.add(meeting);
+            }
+        }
+        return result;
     }
 
     @Override
