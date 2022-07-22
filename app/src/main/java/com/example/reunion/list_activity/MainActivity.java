@@ -73,19 +73,19 @@ public class MainActivity extends AppCompatActivity implements MyMeetingRecycler
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.filter1:
-                        DatePickerDialog datePickerDialog = new DatePickerDialog(this
-                                , new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                                LocalDate dateformatter = LocalDate.of(year,month+1,dayOfMonth);
-                                List<Meeting> mMeeting = mApiService.getMeetingbyDate(dateformatter);
-                                initList(mMeeting);
-                            }
-                        },2022,02,06);
-                        datePickerDialog.show();
+                DatePickerDialog datePickerDialog = new DatePickerDialog(this
+                        , new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        LocalDate dateformatter = LocalDate.of(year, month + 1, dayOfMonth);
+                        List<Meeting> mMeeting = mApiService.getMeetingbyDate(dateformatter);
+                        initList(mMeeting);
+                    }
+                }, 2022, 02, 06);
+                datePickerDialog.show();
                 return true;
             case R.id.filter2:
-                String[] items = new String[] {"Réunion 1", "Réunion 2", "Réunion 8"};
+                String[] items = new String[]{"Réunion 1", "Réunion 2", "Réunion 8"};
 
                 new MaterialAlertDialogBuilder(this)
                         .setTitle("Rooms").setItems(items, new DialogInterface.OnClickListener() {
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements MyMeetingRecycler
         mRecyclerView.setAdapter(mMyMeetingRecyclerViewAdapter);
     }
 
-    private void showAllMeetings(){
+    private void showAllMeetings() {
 
         List<Meeting> mMeeting = mApiService.getMeeting();
         initList(mMeeting);

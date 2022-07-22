@@ -36,19 +36,29 @@ public class Meeting {
         this.subject = subject;
     }
 
-    public LocalDate getTime() { return time; }
+    public LocalDate getTime() {
+        return time;
+    }
 
-    public void setTime(LocalDate time) { this.time = time; }
+    public void setTime(LocalDate time) {
+        this.time = time;
+    }
 
-    public String getRoom() { return room; }
+    public String getRoom() {
+        return room;
+    }
 
     public void setRoom(String room) {
         this.room = room;
     }
 
-    public String getEmails() { return emails; }
+    public String getEmails() {
+        return emails;
+    }
 
-    public void setEmails(String emails) { this.emails = emails; }
+    public void setEmails(String emails) {
+        this.emails = emails;
+    }
 
 
     public static Comparator<Meeting> ComparatorDate = new Comparator<Meeting>() {

@@ -45,9 +45,9 @@ public class AddMeetingActivity extends AppCompatActivity {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(v.getContext(), new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                    dateformatter = LocalDate.of(year,month+1,dayOfMonth);
+                        dateformatter = LocalDate.of(year, month + 1, dayOfMonth);
                     }
-                },2022,02,06);
+                }, 2022, 02, 06);
                 datePickerDialog.show();
             }
         });

@@ -87,7 +87,7 @@ public class MeetingInstrumentedTest {
         onView(withId(R.id.create))
                 .perform(click());
 
-        onView(ViewMatchers.withContentDescription("listmymeeting")).check(new RecyclerViewItemCountAssertion(ITEMS_COUNT+1));
+        onView(ViewMatchers.withContentDescription("listmymeeting")).check(new RecyclerViewItemCountAssertion(ITEMS_COUNT + 1));
 
         onView(ViewMatchers.withContentDescription("nom3")).check(matches(withText("Rob")));
 
@@ -115,7 +115,7 @@ public class MeetingInstrumentedTest {
     }
 
     @Test
-    public void myListMeetingsbyRoom_shouldExist(){
+    public void myListMeetingsbyRoom_shouldExist() {
 
         openActionBarOverflowOrOptionsMenu(InstrumentationRegistry.getTargetContext());
         onView(withText("Lieux")).perform(click());
@@ -128,7 +128,7 @@ public class MeetingInstrumentedTest {
     }
 
     @Test
-    public void myListMeetingsbyDate_shouldExist(){
+    public void myListMeetingsbyDate_shouldExist() {
 
         openActionBarOverflowOrOptionsMenu(InstrumentationRegistry.getTargetContext());
         onView(withText("Date")).perform(click());

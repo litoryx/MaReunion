@@ -47,7 +47,7 @@ public class MeetingUnitTest {
                 "Tristan",
                 "Réunion 1",
                 "dsoivfie",
-                LocalDate.of(1990,02,06),
+                LocalDate.of(1990, 02, 06),
                 "boubu");
         List<Meeting> expectedMeeting = new ArrayList<>(service.getMeeting());
         expectedMeeting.add(mUse);
@@ -64,25 +64,25 @@ public class MeetingUnitTest {
     }
 
     @Test
-    public void verificationFilterDate(){
+    public void verificationFilterDate() {
         Meeting meeting = new Meeting(
-               "Mika",
+                "Mika",
                 "Réunion 6",
                 "dsoivfie",
-                LocalDate.of(1990,02,06),
+                LocalDate.of(1990, 02, 06),
                 "boubu");
         service.createMeeting(meeting);
-        List<Meeting> ListMeetingbyDate = service.getMeetingbyDate(LocalDate.of(1990,02,06));
+        List<Meeting> ListMeetingbyDate = service.getMeetingbyDate(LocalDate.of(1990, 02, 06));
         assertThat(ListMeetingbyDate, IsIterableContainingInAnyOrder.containsInAnyOrder(meeting));
     }
 
     @Test
-    public void verificationFilterRoom(){
+    public void verificationFilterRoom() {
         Meeting meeting = new Meeting(
                 "Mika",
                 "Réunion 96",
                 "dsoivfie",
-                LocalDate.of(1990,02,06),
+                LocalDate.of(1990, 02, 06),
                 "boubu");
         service.createMeeting(meeting);
         String expRoom = "Réunion 96";

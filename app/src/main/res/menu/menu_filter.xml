@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/menu_1">
-    <item android:id="@+id/filter1"
-        android:title="Date" >
-    </item>
-    <item android:id="@+id/filter2"
-        android:title="Lieux" >
+    <item
+        android:id="@+id/filter1"
+        android:title="Date"></item>
+    <item
+        android:id="@+id/filter2"
+        android:title="Lieux">
         <!-- "file" submenu -->
     </item>
-    <item android:id="@+id/filter3"
-        android:title="Tous" >
-    </item>
+    <item
+        android:id="@+id/filter3"
+        android:title="Tous"></item>
 </menu>

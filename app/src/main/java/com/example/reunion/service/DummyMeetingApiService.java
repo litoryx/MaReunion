@@ -20,8 +20,8 @@ public class DummyMeetingApiService implements MeetingApiService {
 
         List<Meeting> result = new ArrayList<>();
 
-        for (Meeting meeting: meetings) {
-            if(meeting.getTime().equals(date)){
+        for (Meeting meeting : meetings) {
+            if (meeting.getTime().equals(date)) {
                 result.add(meeting);
             }
         }
@@ -33,10 +33,10 @@ public class DummyMeetingApiService implements MeetingApiService {
 
         List<Meeting> result = new ArrayList<>();
 
-        for (Meeting meeting: meetings) {
-          if(meeting.getRoom().equals(room)){
-              result.add(meeting);
-          }
+        for (Meeting meeting : meetings) {
+            if (meeting.getRoom().equals(room)) {
+                result.add(meeting);
+            }
         }
         return result;
     }
